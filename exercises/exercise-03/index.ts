@@ -58,10 +58,10 @@ function isUser(person: Person) {
 
 function logPerson(person: Person) {
     let additionalInformation: string = '';
-    if (isAdmin(person)) {
+    if (person.type === 'admin') {
         additionalInformation = person.role;
     }
-    if (isUser(person)) {
+    if (person.type === 'user') {
         additionalInformation = person.occupation;
     }
     console.log(` - ${chalk.green(person.name)}, ${person.age}, ${additionalInformation}`);
